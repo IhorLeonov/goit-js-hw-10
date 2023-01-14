@@ -19,18 +19,24 @@ body {
   padding: 8px;
   max-width: 320px;
   height: 35px;
-  margin-bottom: 16px;
   border: 1px solid black;
   border-radius: 10px;
 }
 
 .reset-btn {
   margin: 0;
+  margin-left: 4px;
   height: 35px;
   font: inherit;
   background-color: #8ef4ca70;
   border: 1px solid black;
   border-radius: 10px;
+}
+
+.input-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
 }
 
 .list-item {

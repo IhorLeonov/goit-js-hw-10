@@ -10,11 +10,38 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
+  padding-left: 30px;
+  padding-top: 30px;
 }
 
 #search-box {
   font: inherit;
   padding: 8px;
   max-width: 320px;
+  height: 35px;
   margin-bottom: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.reset-btn {
+  margin: 0;
+  height: 35px;
+  font: inherit;
+  background-color: #8ef4ca70;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.list-item {
+  list-style: none;
+  display: flex;
+}
+
+.country-list {
+  padding-left: 10px;
 }

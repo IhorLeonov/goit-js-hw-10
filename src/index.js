@@ -48,7 +48,8 @@ function onInput(e) {
 }
 
 function createCountryListMarkup(arr) {
-  countryInfo.innerHTML = '';
+  resetMarkup();
+
   const markup = arr
     .map(
       ({
@@ -68,7 +69,8 @@ function createCountryListMarkup(arr) {
 }
 
 function createCountryInfoMarkup(arr) {
-  countryList.innerHTML = '';
+  resetMarkup();
+
   const markup = arr
     .map(
       ({
@@ -91,19 +93,28 @@ function createCountryInfoMarkup(arr) {
   countryInfo.innerHTML = markup;
 }
 
+function ifFoundMoreThenTen() {
+  resetMarkup();
+
+  Notiflix.Notify.info(
+    'Too many matches found. Please enter a more specific name'
+  );
+}
+
+function createErrorNotify() {
+  resetMarkup();
+
+  Notiflix.Notify.failure(`Oops, there is no country with that name`);
+}
+
+function resetMarkup() {
+  countryInfo.innerHTML = '';
+  countryList.innerHTML = '';
+}
+
 function resetInput() {
   searchBox.value = '';
   countryInfo.innerHTML = '';
   countryList.innerHTML = '';
   resetButton.disabled = true;
-}
-
-function createErrorNotify() {
-  Notiflix.Notify.failure(`Oops, there is no country with that name`);
-}
-
-function ifFoundMoreThenTen() {
-  Notiflix.Notify.info(
-    'Too many matches found. Please enter a more specific name'
-  );
 }

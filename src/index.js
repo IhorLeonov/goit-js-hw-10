@@ -25,14 +25,14 @@ searchBox.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
 resetButton.addEventListener('click', resetInput);
 
 function onInput(e) {
-  const country = e.target.value.trim();
+  const name = e.target.value.trim();
 
-  if (!country) {
+  if (!name) {
     resetInput();
     return;
   }
 
-  fetchCountries(country)
+  fetchCountries(name)
     .then(data => {
       if (data.length > 10) {
         ifFoundMoreThenTen();
@@ -42,7 +42,7 @@ function onInput(e) {
         createCountryListMarkup(data);
       }
     })
-    .catch(err => createErrorMarkup());
+    .catch(err => createErrorNotify());
 
   resetButton.disabled = false;
 }
@@ -98,7 +98,7 @@ function resetInput() {
   resetButton.disabled = true;
 }
 
-function createErrorMarkup() {
+function createErrorNotify() {
   Notiflix.Notify.failure(`Oops, there is no country with that name`);
 }
 

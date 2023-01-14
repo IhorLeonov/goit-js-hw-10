@@ -33,15 +33,16 @@ body {
   border-radius: 10px;
 }
 
-.text-bold {
-  font-weight: bold;
-}
-
 .list-item {
   list-style: none;
   display: flex;
 }
 
 .country-list {
-  padding-left: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
 }
